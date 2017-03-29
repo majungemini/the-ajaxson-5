@@ -4,23 +4,81 @@
     <title>The AJAXson 5</title>
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script type="text/javascript" src="request-gif.js"></script>
+    <style>
+        body{
+            color:black;
+            font-family: monospace;
+
+        }
+        h1{
+            text-align: center;
+        }
+        input[type="submit"] {
+            padding: 0px 10px;
+            height:40px;
+            background-color:royalblue;
+            color:white;
+            font-weight: bold;
+        }
+        label{
+            font-weight: bold;
+            border:3%;
+            text-align: right;
+
+        }
+        div{
+            /*text-indent: 30%;*/
+            background-color:HoneyDew ;
+            text-align: left;
+            width:100%;
+            height:100px;
+            vertical-align: middle;
+            padding-left:25%
+
+            /*left:10%;*/
+        }
+        input{
+            padding: 2px;
+            text-indent: 80%；
+        }
+        #error{
+            color:red;
+            font-weight:bold;
+
+        }
+        #feedback{
+            font-weight: bold;
+            padding-left:30%;
+        }
+        #gif{
+            padding-left:30%;
+        }
+    </style>
 </head>
 <body>
-    <h1>The AJAXson 5</h1>
+    <h1 style="background-color:HoneyDew ;">The AJAXson 5</h1>
 
     <form id="form-gif-request" />
-        <label>What kind of Jackson 5 related gif do you want?</label>
-        <input name="tag" type="text"/>
+        <div>
+            <br>
+            <label>What kind of Jackson 5 related gif do you want?</label>
+            <br><br>
+            <input name="tag" type="text"/>
+        </div>
         <br>
         <div>
+            <br>
             <label>Prove you are not a robot by answering this riddle:</label>
-            <br>
-            <input name="valid" type="text"/>
-            <label><b>Jacksons are better than 1.</b></label>
-            <br>
+            <br><br>
+            <input id="input_warning" name="valid" type="text"/>
+            <label id="warning"><b>Jacksons are better than 1.</b></label>
             <p id="error" hidden="true">No gifs for you.</p>
         </div>
-        <input type="submit" value="Get my Gif!" />
+        <br>
+        <div style="background-color:white;">
+            <input type="submit" value="Get my Gif!" />
+        </div>
+
     </form>
 
     <img id="gif" src="" hidden="true"/>

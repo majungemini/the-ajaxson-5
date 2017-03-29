@@ -17,7 +17,7 @@ function fetchAndDisplayGif(event) {
     // This prevents the form submission from doing what it normally does: send a request (which would cause our page to refresh).
     // Because we will be making our own AJAX request, we dont need to send a normal request and we definitely don't want the page to refresh.
     event.preventDefault();
-    if($("input[name=valid]").val()==="1"){
+    if($("input[name=valid]").val()==="5"){
         isCurrentlyLoaded=false;
         setGifLoadedStatus(isCurrentlyLoaded);
         // get the user's input text from the DOM
@@ -58,6 +58,10 @@ function fetchAndDisplayGif(event) {
                 setGifLoadedStatus(false);
             }
         });
+        $("#error").attr("hidden", true);
+        $("#warning").css({"color": "","border":""});
+        $("#input_warning").css({"border":""});
+        $("#gif").css({"vertical-align": "middle"});
 
         // TODO
         // give the user a "Loading..." message while they wait
@@ -66,6 +70,8 @@ function fetchAndDisplayGif(event) {
         // $("#feedback").removeAttr("hidden");
     }else{
         $("#error").attr("hidden", false);
+        $("#warning").css({"color": "red","border":"3px solid red"});
+        $("#input_warning").css({"border":"3px solid red"});
     }
 
 }
